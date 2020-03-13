@@ -1,20 +1,24 @@
 // @flow
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
+const calendarHeight = 2400
 // const eventPaddingLeft = 4
-const leftMargin = 50 - 1;
+const leftMargin = 50 - 1
 
-export default function styleConstructor(theme = {}, calendarHeight) {
+export default function styleConstructor (
+  theme = {}
+) {
   let style = {
     container: {
       flex: 1,
+      fontFamily: "Poppins-Regular",
       backgroundColor: '#ffff',
-      ...theme.container,
+      ...theme.container
     },
     contentStyle: {
+      fontFamily: "Poppins-Regular",
       backgroundColor: '#ffff',
-      height: calendarHeight + 10,
-      ...theme.contentStyle,
+      height: calendarHeight + 10
     },
     header: {
       paddingHorizontal: 30,
@@ -25,26 +29,17 @@ export default function styleConstructor(theme = {}, calendarHeight) {
       backgroundColor: '#F5F5F6',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'stretch',
-      ...theme.header,
-    },
-    headerTextContainer: {
-      justifyContent: 'center',
+      alignItems: 'center',
+      ...theme.header
     },
     headerText: {
-      fontSize: 16,
-      ...theme.headerText,
+      fontFamily: "Poppins-Bold",
+      fontSize: 16
     },
     arrow: {
       width: 15,
       height: 15,
-      resizeMode: 'contain',
-    },
-    arrowButton: {
-      width: 50,
-      alignItems: 'center',
-      justifyContent: 'center',
-      ...theme.arrowButton,
+      resizeMode: 'contain'
     },
     event: {
       position: 'absolute',
@@ -58,54 +53,59 @@ export default function styleConstructor(theme = {}, calendarHeight) {
       flex: 1,
       paddingTop: 5,
       paddingBottom: 0,
+      paddingLeft: 20,
       flexDirection: 'column',
       alignItems: 'flex-start',
       overflow: 'hidden',
-      ...theme.event,
+      ...theme.event
     },
     eventTitle: {
-      color: '#615B73',
-      fontWeight: '600',
-      minHeight: 15,
-      ...theme.eventTitle,
+      fontFamily: "Poppins-Bold",
+      color: '#ffffff',
+      fontWeight: 'bold',
+      fontSize: 16,
+      // minHeight: 15,
+      ...theme.eventTitle
     },
     eventSummary: {
-      color: '#615B73',
-      fontSize: 12,
+      fontFamily: "Poppins-Regular",
+      color: '#ffffff',
+      fontSize: 16,
       flexWrap: 'wrap',
-      ...theme.eventSummary,
+      ...theme.eventSummary
     },
     eventTimes: {
-      marginTop: 3,
-      fontSize: 10,
-      fontWeight: 'bold',
-      color: '#615B73',
+      fontFamily: "Poppins-Regular",
+      // marginTop: 3,
+      fontSize: 16,
+      // fontWeight: 'bold',
+      color: '#ffffff',
       flexWrap: 'wrap',
-      ...theme.eventTimes,
+      ...theme.eventTimes
     },
     line: {
       height: 1,
       position: 'absolute',
       left: leftMargin,
       backgroundColor: 'rgb(216,216,216)',
-      ...theme.line,
+      ...theme.line
     },
     lineNow: {
       height: 1,
       position: 'absolute',
       left: leftMargin,
-      backgroundColor: 'red',
-      ...theme.lineNow,
+      backgroundColor: 'transparent',
+      ...theme.line
     },
     timeLabel: {
       position: 'absolute',
       left: 15,
       color: 'rgb(170,170,170)',
       fontSize: 10,
-      fontFamily: Platform.OS === 'ios' ? 'Helvetica Neue' : 'Roboto',
-      fontWeight: '500',
-      ...theme.timeLabel,
-    },
-  };
-  return StyleSheet.create(style);
+      fontFamily: 'Poppins-Bold',
+      fontWeight: 'bold',
+      ...theme.timeLabel
+    }
+  }
+  return StyleSheet.create(style)
 }
