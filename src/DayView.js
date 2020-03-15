@@ -165,7 +165,7 @@ export default class DayView extends React.PureComponent {
       // Fixing the number of lines for the event title makes this calculation easier.
       // However it would make sense to overflow the title to a new line if needed
       const numberOfLines = Math.floor(event.height / TEXT_LINE_HEIGHT);
-      const formatTime = this.props.format24h ? 'HH:mm' : 'hh:mm A';
+      const formatTime = this.props.format24h ? 'H:mm' : 'h:mm A';
       return (
         <TouchableOpacity
           activeOpacity={0.5}
