@@ -62,7 +62,7 @@ export default class DayView extends React.PureComponent {
       if (this._scrollView) {
         this._scrollView.scrollTo({
           x: 0,
-          y: 100 * ((moment().hour() - 0.7) - this.props.start),
+          y: 100 * ((moment().hour() - 0.2) - this.props.start),
           animated: true,
         });
       }
